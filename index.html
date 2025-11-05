@@ -1,213 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>موقع من الصفر — قالب جاهز</title>
-  <meta name="description" content="قالب موقع صغير قابل للتخصيص. رأس، معرض، مميزات، نموذج تواصل، وتذييل." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f1724; /* خلفية داكنة */
-      --card:#0b1220;
-      --muted:#9aa4b2;
-      --accent:#06b6d4; /* لون مائل إلى السيان */
-      --glass: rgba(255,255,255,0.03);
-      --radius:14px;
-      --container:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;padding:0;font-family:'Cairo',system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,var(--bg),#071022);color:#e6eef6;line-height:1.6}
-    .wrap{max-width:var(--container);margin:32px auto;padding:24px}
-
-    /* header */
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
-    nav{display:flex;gap:12px;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
-    nav a:hover{background:var(--glass);color:#fff}
-    .cta{background:linear-gradient(90deg,var(--accent),#7c3aed);padding:10px 14px;border-radius:12px;color:#071022;font-weight:600;text-decoration:none}
-
-    /* hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:26px}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:28px;border-radius:var(--radius);backdrop-filter: blur(6px)}
-    h1{margin:0 0 12px 0;font-size:28px}
-    p.lead{color:var(--muted);margin:0 0 18px}
-    .hero-cta{display:flex;gap:12px}
-    .btn{padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600}
-    .btn-outline{border:1px solid rgba(255,255,255,0.06);color:var(--accent);background:transparent}
-
-    /* features */
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-    .feature{background:var(--card);padding:18px;border-radius:12px}
-    .feature h3{margin:6px 0 0}
-    .feature p{color:var(--muted);margin:6px 0 0;font-size:14px}
-
-    /* gallery / cards */
-    .sample{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
-    .sample .img{height:180px;border-radius:12px;background:linear-gradient(90deg,#0b2230,#07213a);display:flex;align-items:center;justify-content:center;color:var(--muted)}
-
-    /* contact */
-    .contact{margin-top:26px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-    textarea{min-height:120px}
-    .foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;color:var(--muted)}
-
-    footer{margin-top:30px;color:var(--muted);text-align:center}
-
-    /* responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .features{grid-template-columns:repeat(2,1fr)}
-      .sample{grid-template-columns:1fr}
-      nav{display:none}
-    }
-    @media (max-width:520px){
-      .features{grid-template-columns:1fr}
-      .logo{width:40px;height:40px}
-      h1{font-size:22px}
-    }
-
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أوكسجين - للعطور والزهور والهدايا</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">م</div>
-        <div>
-          <div style="font-weight:700">موقعي</div>
-          <div style="font-size:12px;color:var(--muted)">قالب سريع قابل للتعديل</div>
-        </div>
-      </div>
-
+  <header>
+    <div class="container header">
+      <img src="assets/logo.svg" alt="OXYGEN Logo" class="logo">
       <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#features">المميزات</a>
-        <a href="#samples">أمثلة</a>
-        <a href="#contact">تواصل</a>
-        <a class="cta" href="#contact">احصل على عرض</a>
+        <a href="index.html" class="active">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="cart.html">سلة المشتريات (<span id="cartCount">0</span>)</a>
+        <a href="checkout.html">الدفع</a>
       </nav>
+    </div>
+  </header>
 
-      <button id="menuBtn" aria-label="قائمة" style="background:transparent;border:0;color:var(--muted);font-size:18px;display:none">☰</button>
-    </header>
+  <section class="hero">
+    <div class="container">
+      <h1>أوكسجين للعطور والزهور والهدايا</h1>
+      <p>استكشف عالمًا من الروائح الفاخرة والزهور المنعشة والهدايا الأنيقة.</p>
+      <a href="products.html" class="btn">تسوق الآن</a>
+    </div>
+  </section>
 
-    <section class="hero" id="home">
-      <div class="hero-card">
-        <h1>تصميم موقع من الصفر — سريع، متجاوب، وقابل للتعديل</h1>
-        <p class="lead">قالب أولي يمكنك تخصيصه لعرض خدماتك، معرض أعمالك، أو متجرك الإلكتروني البسيط. كل شيء مُرتّب ومُعلّم للتعديل بسهولة.</p>
-        <div class="hero-cta">
-          <a class="btn" href="#features" style="background:var(--accent);color:#071022;border-radius:12px">ابدأ الآن</a>
-          <a class="btn btn-outline" href="#samples">اطّلع على أمثلة</a>
-        </div>
+  <footer>
+    <p>© <span id="year"></span> أوكسجين. جميع الحقوق محفوظة.</p>
+  </footer>
 
-        <div style="margin-top:18px;color:var(--muted);font-size:14px">يشمل: HTML، CSS، وJavaScript خفيف للتفاعلات الأساسية.</div>
-      </div>
-
-      <aside>
-        <div class="hero-card" style="max-width:420px">
-          <h3 style="margin-top:0">خطة بسيطة للتسليم</h3>
-          <ul style="color:var(--muted);padding-left:18px;margin:10px 0">
-            <li>تصميم واجهة ومحتوى أساسي</li>
-            <li>تحسين تجاوبية للشاشات</li>
-            <li>نموذج تواصل بسيط مع تحقق إدخال</li>
-            <li>تعليمات للنشر (GitHub Pages / Netlify)</li>
-          </ul>
-          <div style="font-size:13px;color:var(--muted)">تريد نسخة React أو نظام إدارة محتوى؟ أخبرني وسأجهزها.</div>
-        </div>
-      </aside>
-    </section>
-
-    <section id="features" class="features" aria-label="مميزات">
-      <div class="feature">
-        <strong>تصميم متجاوب</strong>
-        <h3>يعمل على كل الشاشات</h3>
-        <p>تم اختبار البنية لتتكيّف مع الهواتف، التابلت، والحواسب دون مكتبات خارجية.</p>
-      </div>
-      <div class="feature">
-        <strong>سريع وخفيف</strong>
-        <h3>مُحسّن للتحميل</h3>
-        <p>CSS وJavaScript بسيطان بدون تبعية ضخمة — بداية جيدة لتحسين الأداء.</p>
-      </div>
-      <div class="feature">
-        <strong>قابل للتخصيص</strong>
-        <h3>ألوان وخطوط</h3>
-        <p>غيّر المتغيرات في :root لتخصيص الألوان والهوامش بسهولة.</p>
-      </div>
-    </section>
-
-    <section id="samples" class="sample">
-      <div class="img">صورة / نموذج 1</div>
-      <div class="img">صورة / نموذج 2</div>
-      <div class="img">صورة / نموذج 3</div>
-      <div class="img">صورة / نموذج 4</div>
-    </section>
-
-    <section id="contact" class="contact">
-      <h3 style="margin-top:0">تواصل معنا</h3>
-      <form id="contactForm">
-        <div class="form-grid">
-          <input type="text" name="name" placeholder="الاسم" required />
-          <input type="email" name="email" placeholder="البريد الإلكتروني" required />
-          <input type="text" name="subject" placeholder="الموضوع" />
-          <input type="tel" name="phone" placeholder="الهاتف (اختياري)" />
-        </div>
-        <div style="margin-top:12px">
-          <textarea name="message" placeholder="اكتب رسالتك..." required></textarea>
-        </div>
-        <div style="display:flex;gap:10px;margin-top:12px;align-items:center">
-          <button type="submit" class="btn" style="background:var(--accent);color:#071022">إرسال</button>
-          <div id="formMsg" style="color:var(--muted);font-size:14px"></div>
-        </div>
-      </form>
-
-      <div class="foot">
-        <div>عنوانك • مدينتك</div>
-        <div>© <span id="year"></span> موقعي. كل الحقوق محفوظة.</div>
-      </div>
-    </section>
-
-    <footer>
-      صمّم وتطوير — قالب أساسي. أريد مساعدتك في تخصيصه؟ أخبرني باللون، اللغة، أو الوظائف التي تريدها.
-    </footer>
-  </div>
-
-  <script>
-    // تاريخ تلقائي
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // تفاعل نموذج بسيط (محلي)
-    const form = document.getElementById('contactForm');
-    const msg = document.getElementById('formMsg');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const data = new FormData(form);
-      // تحقق بسيط
-      if(!data.get('name') || !data.get('email') || !data.get('message')){
-        msg.textContent = 'الرجاء ملء الحقول المطلوبة.';
-        return;
-      }
-      // هنا يمكنك وضع طلب fetch إلى سيرفرك أو خدمة مثل Formspree
-      msg.textContent = 'تم إرسال الرسالة (محاكاة). شكرًا لك!';
-      form.reset();
-      setTimeout(()=> msg.textContent = '', 4000);
-    });
-
-    // زر القائمة للهواتف - يظهر في حالة إظهار nav غير مرئي
-    const menuBtn = document.getElementById('menuBtn');
-    const nav = document.querySelector('nav');
-    function updateMenuBtn(){
-      if(window.innerWidth <= 900){ menuBtn.style.display = 'block'; } else { menuBtn.style.display = 'none'; nav.style.display = 'flex'; }
-    }
-    updateMenuBtn();
-    window.addEventListener('resize', updateMenuBtn);
-    menuBtn.addEventListener('click', ()=>{ nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex'; });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
